@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>易游体育 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: #fafbfc;
+            color: #1e2a3a;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #e3e8ed;
+        }
+
+        .site-logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: #1e2a3a;
+        }
+
+        .top-nav a {
+            font-size: 0.9rem;
+            color: #2c6b9b;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .top-nav a:hover {
+            border-bottom-color: #2c6b9b;
+        }
+
+        /* 主视觉 */
+        .hero {
+            margin: 2.5rem 0 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+            color: #0f1b2b;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .subhead {
+            font-size: 1rem;
+            color: #4f5e6f;
+            max-width: 600px;
+        }
+
+        /* 核心介绍 */
+        .intro-card {
+            background: #ffffff;
+            padding: 2rem 2.2rem;
+            border-radius: 14px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.5rem;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-card strong {
+            font-weight: 600;
+            color: #0f1b2b;
+        }
+
+        .intro-card a {
+            color: #2c6b9b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cad6e3;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .intro-card a:hover {
+            text-decoration-color: #2c6b9b;
+        }
+
+        /* 三个场景模块 */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .scene-item {
+            background: #ffffff;
+            padding: 1.6rem 1.4rem;
+            border-radius: 14px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.25s;
+        }
+
+        .scene-item:hover {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .scene-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #0f1b2b;
+        }
+
+        .scene-item p {
+            font-size: 0.9rem;
+            color: #3f4e60;
+        }
+
+        /* 常见说明 (FAQ 摘要) */
+        .faq-block {
+            margin: 2rem 0 3rem;
+        }
+
+        .faq-block h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #0f1b2b;
+        }
+
+        .faq-item {
+            margin-bottom: 1.4rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #1e2a3a;
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-item .a {
+            font-size: 0.9rem;
+            color: #4a5b6e;
+            padding-left: 0.25rem;
+        }
+
+        .faq-item .a a {
+            color: #2c6b9b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cad6e3;
+        }
+
+        .faq-item .a a:hover {
+            text-decoration-color: #2c6b9b;
+        }
+
+        /* 底部 */
+        .footer-note {
+            padding-top: 2rem;
+            border-top: 1px solid #e3e8ed;
+            font-size: 0.8rem;
+            color: #6f7d8c;
+            text-align: center;
+            letter-spacing: 0.2px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .scenes-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .intro-card {
+                padding: 1.5rem;
+            }
+
+            .faq-block h2 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 顶部导航 -->
+        <nav class="top-nav">
+            <span class="site-logo">易游体育 · 简介</span>
+            <a href="https://root-yysports.com">易游体育</a>
+        </nav>
+
+        <!-- hero 区域 -->
+        <div class="hero">
+            <h1>关于站点</h1>
+            <p class="subhead">一份从站内服务与可信角度整理的说明页，帮助新访客快速了解定位。</p>
+        </div>
+
+        <!-- 核心介绍 -->
+        <div class="intro-card">
+            <p>
+                <strong>易游体育</strong> 是一个以体育资讯与日常运动内容为主的轻量站点。
+                这里不堆砌复杂功能，也不渲染赛事情绪，而是尝试用更平实的方式整理与运动相关的信息。
+                站内内容主要围绕运动常识、活动参考以及一些基础性的项目介绍展开。
+            </p>
+            <p>
+                如果你正在寻找一个可以安静浏览体育相关内容的角落，可以看看 <a href="https://root-yysports.com">易游体育</a> 的首页。
+                站点结构清晰，没有多余弹窗或过度营销，适合花几分钟了解一些体育方面的实用信息。
+            </p>
+            <p>
+                整个站点由个人维护，内容上侧重真实与可参考性。目前不接入第三方广告联盟，
+                也没有付费推广栏目，保持相对纯粹的信息展示。
+            </p>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <div class="scenes-grid">
+            <div class="scene-item">
+                <h3>日常浏览</h3>
+                <p>适合运动爱好者随手翻阅。没有信息轰炸，只有整理过的运动常识与基础项目介绍。</p>
+            </div>
+            <div class="scene-item">
+                <h3>基础参考</h3>
+                <p>如果你刚开始接触某项运动，站内提供入门级介绍与注意事项，可作为了解起点。</p>
+            </div>
+            <div class="scene-item">
+                <h3>安静阅读</h3>
+                <p>页面设计偏向文字阅读，减少视觉干扰。适合在碎片时间里安静获取信息。</p>
+            </div>
+        </div>
+
+        <!-- 常见说明 FAQ 摘要 -->
+        <div class="faq-block">
+            <h2>一些常见说明</h2>
+            <div class="faq-item">
+                <div class="q">▸ 站点的内容来源可靠吗？</div>
+                <div class="a">内容基于常见的体育知识整理，不编造数据，不夸大效果。如有参考来源会在页面内标注。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">▸ 是否有社区或用户注册功能？</div>
+                <div class="a">目前没有开放注册或论坛板块。站点定位为信息展示型，不收集用户个人信息。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">▸ 我在哪里能看到全部页面？</div>
+                <div class="a">首页作为入口，从 <a href="https://root-yysports.com">易游体育</a> 开始即可浏览已发布的栏目与文章。</div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer-note">
+            易游体育 · 独立站点 · 内容仅供一般性参考
+        </div>
+    </div>
+</body>
+</html>
