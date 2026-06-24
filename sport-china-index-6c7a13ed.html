@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 场景化体育互动平台</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #f7f3ee; 
+            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+            color: #2b2b2b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #faf9f7;
+            padding: 2.5rem 2.2rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid #d9d0c7;
+            padding-bottom: 1rem;
+            margin-bottom: 2.2rem;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .top-nav .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #3f352c;
+        }
+        .top-nav .logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            font-size: 0.95rem;
+            color: #5e544b;
+        }
+        .nav-links span {
+            cursor: default;
+            border-bottom: 1px dotted #c3b7ad;
+        }
+
+        /* hero / 摘要 */
+        .hero {
+            margin-bottom: 2.5rem;
+            padding: 0.2rem 0;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #3e3a35;
+            border-left: 4px solid #c6b8ab;
+            padding-left: 1.2rem;
+            margin: 1.2rem 0 0 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #3b2f26;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 450;
+            border-bottom: 1px solid #e2d9d0;
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.2rem 0;
+            color: #3d352d;
+        }
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 0 0 0.4rem 0;
+            color: #4a3f36;
+        }
+
+        /* 核心介绍块（引用感） */
+        .intro-block {
+            background: #f2ede7;
+            padding: 1.5rem 2rem;
+            border-radius: 18px;
+            margin: 1.8rem 0 2.2rem 0;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+            font-size: 1rem;
+        }
+        .intro-block p {
+            margin-bottom: 0.8rem;
+        }
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 三个场景模块 */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .scene-card {
+            background: #ffffff;
+            border: 1px solid #e0d7ce;
+            border-radius: 20px;
+            padding: 1.5rem 1.2rem;
+            transition: box-shadow 0.2s;
+        }
+        .scene-card:hover {
+            box-shadow: 0 4px 12px rgba(90, 70, 55, 0.06);
+        }
+        .scene-card h3 {
+            margin-top: 0;
+            font-weight: 550;
+        }
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #4d443c;
+        }
+
+        /* 提示框 / 说明块 */
+        .notice-box {
+            background: #efeae3;
+            border-left: 6px solid #b6a898;
+            padding: 1.2rem 1.6rem;
+            margin: 2rem 0 1.8rem 0;
+            border-radius: 0 14px 14px 0;
+            font-size: 0.95rem;
+        }
+        .notice-box strong {
+            color: #3f3228;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            margin: 1.8rem 0 1rem;
+        }
+        .faq-item {
+            padding: 0.7rem 0;
+            border-bottom: 1px dashed #d6cdc2;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #3f352b;
+        }
+        .faq-a {
+            margin-top: 0.2rem;
+            color: #5c5248;
+            padding-left: 0.8rem;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #dbd2c8;
+            font-size: 0.9rem;
+            color: #6a6056;
+            text-align: center;
+        }
+
+        a {
+            color: #6b4f3a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cbb7a6;
+        }
+        a:hover {
+            color: #3d2c1f;
+            text-decoration-color: #7a5d4a;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 1.5rem 1rem; }
+            h1 { font-size: 1.6rem; }
+            .top-nav { flex-direction: column; align-items: flex-start; }
+            .nav-links { flex-wrap: wrap; gap: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部导航（轻量） -->
+    <div class="top-nav">
+        <div class="logo">
+            <a href="https://sport-china-igame.com">爱游戏</a>
+        </div>
+        <div class="nav-links">
+            <span>场景</span>
+            <span>说明</span>
+            <span>常见问题</span>
+        </div>
+    </div>
+
+    <!-- hero / 一句话定位 -->
+    <div class="hero">
+        <h1>快速识别 · 轻量导航</h1>
+        <p>「爱游戏」聚焦体育场景与互动体验，帮助你在运动资讯、线上赛事、社区交流之间找到自然入口。以下从三个实用场景展开，方便你判断这个平台是否符合需要。</p>
+    </div>
+
+    <!-- 核心介绍（引用感段落） -->
+    <div class="intro-block">
+        <p>如果你正在寻找一个以体育内容为线索、同时兼顾游戏化互动的站点，<strong>爱游戏</strong> 是一个值得了解的方向。不同于综合门户或垂直论坛，它的界面逻辑更偏向“场景先行”——用户先看到自己可能参与的运动情境，再逐步深入信息或服务。这种结构对初次接触的人比较友好：不需要在菜单里反复搜索，页面的模块本身就在回答问题。</p>
+        <p>从运行状态来看，站内内容围绕赛事动态、运动科普、以及轻量的策略或模拟类互动展开，更新节奏稳定。没有夸张的推送弹窗，也没有诱导分享的浮层，整体风格接近一本可翻阅的体育手册。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <h2>三个典型使用场景</h2>
+    <div class="scene-grid">
+        <div class="scene-card">
+            <h3>🏀 赛事追踪</h3>
+            <p>查看近期联赛日程、比分摘要及队伍分析。数据以列表与卡片形式呈现，重点场次附带简短战术图解，适合赛前快速浏览。</p>
+        </div>
+        <div class="scene-card">
+            <h3>⚽ 运动百科</h3>
+            <p>规则解读、装备介绍、训练基础——每篇内容控制在 600 字以内，配有示意图。适合想了解某项运动但不想看长篇大论的读者。</p>
+        </div>
+        <div class="scene-card">
+            <h3>🎮 互动模拟</h3>
+            <p>部分页面嵌入了轻量决策类互动（如阵容搭配、赛果预测），操作简单，反馈直观。这类功能不涉及真实货币，仅供娱乐参考。</p>
+        </div>
+    </div>
+
+    <!-- 提示框 / 说明型引用 -->
+    <div class="notice-box">
+        <strong>💡 提示：</strong> 如果你打开「爱游戏」首页后看到的是分类标签而非长篇资讯，这正是它的设计特征——把选择权交给用户，每个标签对应一类场景。可以试着从自己最熟悉的一项运动点起。
+    </div>
+
+    <!-- 常见问题摘要 -->
+    <h2>常见简要说明</h2>
+    <div class="faq-mini">
+        <div class="faq-item">
+            <div class="faq-q">▸ 是否需要注册才能浏览？</div>
+            <div class="faq-a">大部分内容（赛事摘要、百科、模拟预览）无需登录即可查看。部分社区回复或保存进度功能可能需注册，注册信息仅用于基础身份识别。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">▸ 移动端适配如何？</div>
+            <div class="faq-a">页面采用响应式布局，手机浏览器缩放正常，卡片自动折行。建议在竖屏模式下横滑查看部分数据表格。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">▸ 内容来源可靠吗？</div>
+            <div class="faq-a">平台引用公开赛事数据与运动机构发布的规则文档，并标注参考来源。模拟互动结果基于公开概率模型，不具有预测性质。</div>
+        </div>
+    </div>
+
+    <!-- 再次自然嵌入链接 -->
+    <p style="margin: 1.8rem 0 0.6rem; font-size: 1rem;">
+        若想直接进入主站，可以前往 <a href="https://sport-china-igame.com">爱游戏</a> 首页，从场景列表中选择你感兴趣的板块。
+    </p>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        <span>基于场景的体育导航 · 信息页面</span>
+    </div>
+
+</div>
+</body>
+</html>
