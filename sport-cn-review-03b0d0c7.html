@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>站点介绍 · 爱游戏知识库</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f2f4f6;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      line-height: 1.6;
+      color: #1e2a3a;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* 页眉 */
+    .site-header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .site-header h1 {
+      font-size: 1.9rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #1f2c3c;
+      border-bottom: 2px solid #d0d6dc;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    .site-header .sub-label {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #5a6b7c;
+    }
+
+    /* 卡片通用 */
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e4e9ef;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.75rem;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #1d2a3a;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #eef2f6;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card-title .icon {
+      display: inline-block;
+      background: #dce3ec;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #2c3f58;
+      margin-right: 0.25rem;
+    }
+
+    /* 两栏／网格 */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+    @media (max-width: 640px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      body {
+        padding: 1.25rem 0.75rem;
+      }
+      .card {
+        padding: 1.25rem 1rem;
+      }
+    }
+
+    /* 介绍区文字 */
+    .intro-text {
+      font-size: 1rem;
+      color: #1f2b39;
+    }
+    .intro-text p {
+      margin-bottom: 0.9rem;
+    }
+    .intro-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 列表 */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+    .feature-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed #e0e6ed;
+      display: flex;
+      gap: 0.6rem;
+    }
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+    .feature-list li::before {
+      content: "▹";
+      color: #4b7a9c;
+      font-weight: 500;
+    }
+
+    /* 提示区 */
+    .note-box {
+      background: #f7f9fb;
+      border-left: 4px solid #7a9bb5;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.95rem;
+      color: #1e2d3d;
+    }
+    .note-box strong {
+      color: #1f3b4f;
+    }
+
+    /* 相关区 */
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .related-links a {
+      color: #1f5670;
+      text-decoration: none;
+      border-bottom: 1px dotted #b3c9d8;
+      font-size: 0.95rem;
+    }
+    .related-links a:hover {
+      border-bottom: 1px solid #1f5670;
+    }
+
+    /* faq摘要 */
+    .faq-item {
+      padding: 0.65rem 0;
+    }
+    .faq-item + .faq-item {
+      border-top: 1px solid #e9eef3;
+    }
+    .faq-q {
+      font-weight: 500;
+      color: #1f3143;
+      margin-bottom: 0.2rem;
+    }
+    .faq-a {
+      color: #3d5168;
+      font-size: 0.95rem;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: #6a7e92;
+      text-align: center;
+      border-top: 1px solid #dae0e8;
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 页眉 -->
+  <header class="site-header">
+    <h1>📘 知识库 · 说明</h1>
+    <span class="sub-label">站点背景 & 可信指引</span>
+  </header>
+
+  <!-- 介绍卡片：站点说明 -->
+  <section class="card">
+    <div class="card-title"><span class="icon">ℹ</span> 关于该平台</div>
+    <div class="intro-text">
+      <p><a href="https://sport-cn-igame.com" style="color:#1f5670;text-decoration:none;border-bottom:1px solid #b3c9d8;">爱游戏</a> 是一个面向运动与休闲资讯的聚合站点，提供赛事动态、健身常识及活动信息等内容。平台内容主要来源于公开资料整理与授权合作，不涉及博彩、非法投注或任何违规推广。</p>
+      <p>本站作为知识库入口，整理了与平台相关的背景说明、使用提示与常见问题摘要，帮助浏览者快速了解站点的定位与边界。所有信息均以客观、克制的语气呈现。</p>
+    </div>
+  </section>
+
+  <!-- 两栏：特点 + 场景 -->
+  <div class="grid-2">
+    <section class="card">
+      <div class="card-title"><span class="icon">✓</span> 内容特点</div>
+      <ul class="feature-list">
+        <li>运动项目介绍与规则科普</li>
+        <li>赛事时间表与结果回顾</li>
+        <li>健身方法与恢复知识</li>
+        <li>活动组织方资质展示</li>
+        <li>合规声明与第三方链接说明</li>
+      </ul>
+    </section>
+    <section class="card">
+      <div class="card-title"><span class="icon">▶</span> 常见使用场景</div>
+      <ul class="feature-list">
+        <li>查阅特定运动项目的背景资料</li>
+        <li>了解近期赛事安排</li>
+        <li>获取基础训练建议</li>
+        <li>确认平台内容来源与免责信息</li>
+        <li>作为兴趣入门参考</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- 提示区 -->
+  <div class="note-box">
+    <strong>📌 可信说明</strong> — 本页面为知识库介绍页，不存储用户隐私数据，不提供下载或支付功能。平台所引用内容均标注来源或注明转载，浏览时请自行判断信息时效性。如有疑问，可通过站点内公开的联系方式反馈。
+  </div>
+
+  <!-- 相关信息区 与 FAQ 摘要合并 -->
+  <section class="card">
+    <div class="card-title"><span class="icon">❓</span> 相关信息 & FAQ 摘要</div>
+    <div class="faq-item">
+      <div class="faq-q">该站点是否需要注册？</div>
+      <div class="faq-a">目前平台内容以公开浏览为主，部分互动功能可能需要注册账号，详情请参考站内指引。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">内容更新频率如何？</div>
+      <div class="faq-a">赛事期间更新较密集，常规内容每周补充。建议关注站点公告栏或<a href="https://sport-cn-igame.com" style="color:#1f5670;text-decoration:none;border-bottom:1px dotted #b3c9d8;">爱游戏</a>首页动态。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">是否有广告或推广链接？</div>
+      <div class="faq-a">页面中可能包含第三方链接或推荐信息，但均会明确标注，且不涉及诱导点击。请根据自身情况判断。</div>
+    </div>
+    <div class="related-links" style="margin-top:1rem;">
+      <span style="color:#3d5168;font-weight:500;">相关阅读：</span>
+      <a href="https://sport-cn-igame.com">爱游戏</a>
+      <a href="#">隐私说明</a>
+      <a href="#">内容合作</a>
+      <a href="#">免责条款</a>
+    </div>
+  </section>
+
+  <!-- 额外说明区：目录感 -->
+  <section class="card" style="padding:1rem 1.75rem;">
+    <div style="display:flex;flex-wrap:wrap;gap:0.3rem 1rem;font-size:0.9rem;color:#4b627b;">
+      <span style="background:#eef3f8;padding:0.2rem 0.8rem;border-radius:12px;">📂 站点介绍</span>
+      <span style="background:#eef3f8;padding:0.2rem 0.8rem;border-radius:12px;">📂 内容特点</span>
+      <span style="background:#eef3f8;padding:0.2rem 0.8rem;border-radius:12px;">📂 使用场景</span>
+      <span style="background:#eef3f8;padding:0.2rem 0.8rem;border-radius:12px;">📂 可信说明</span>
+      <span style="background:#eef3f8;padding:0.2rem 0.8rem;border-radius:12px;">📂 FAQ</span>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <p>知识库入口 · 内容由站方整理 &nbsp;|&nbsp; 建议参考 <a href="https://sport-cn-igame.com" style="color:#1f5670;text-decoration:none;">爱游戏</a> 最新页面</p>
+    <p style="margin-top:0.3rem;opacity:0.6;">非官方文档 · 仅供信息参考 · 不构成任何形式的推荐</p>
+  </footer>
+
+</div>
+</body>
+</html>
