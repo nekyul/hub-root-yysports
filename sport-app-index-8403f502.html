@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 使用说明与访问指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f0f2f5;
+      color: #1e2a3e;
+      line-height: 1.6;
+    }
+    .wrapper {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0b1929 0%, #1c2d47 100%);
+      color: #e5edf5;
+      padding: 64px 24px 56px;
+      border-radius: 0 0 40px 40px;
+      margin-bottom: 48px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+    .hero h1 span {
+      color: #80cbc4;
+    }
+    .hero p {
+      max-width: 680px;
+      font-size: 1.08rem;
+      color: #cbd5e1;
+      margin-bottom: 28px;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(128, 203, 196, 0.15);
+      color: #80cbc4;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(128, 203, 196, 0.25);
+    }
+    /* 正文区浅色卡片风格 */
+    .content-block {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 36px 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+    .content-block h2 {
+      font-size: 1.6rem;
+      font-weight: 550;
+      color: #0b1929;
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #80cbc4;
+      display: inline-block;
+    }
+    .content-block h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 20px 0 10px;
+      color: #1e3a5f;
+    }
+    .content-block p {
+      margin-bottom: 14px;
+      color: #2c3e50;
+    }
+    .content-block ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+    }
+    .content-block ul li {
+      position: relative;
+      padding-left: 22px;
+      flex: 0 0 auto;
+      width: calc(50% - 10px);
+      min-width: 200px;
+      margin-bottom: 8px;
+    }
+    .content-block ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #00897b;
+      font-weight: bold;
+    }
+    .tip-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 16px 0 8px;
+    }
+    .tip-card {
+      background: #f5f9fc;
+      border-left: 4px solid #80cbc4;
+      padding: 18px 18px 14px;
+      border-radius: 14px;
+    }
+    .tip-card strong {
+      display: block;
+      font-size: 0.95rem;
+      color: #0b4156;
+      margin-bottom: 4px;
+    }
+    .tip-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #2c3e50;
+    }
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-item strong {
+      display: block;
+      font-weight: 550;
+      color: #1e3a5f;
+      margin-bottom: 6px;
+    }
+    .faq-item p {
+      margin: 0;
+      font-size: 0.98rem;
+      color: #334e68;
+    }
+    .cta-line {
+      background: #f0f7fa;
+      padding: 18px 24px;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 1.1rem;
+      margin: 24px 0 0;
+      border: 1px solid #cce3e8;
+    }
+    .cta-line a {
+      color: #006b5e;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #80cbc4;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .cta-line a:hover {
+      color: #004d40;
+      border-bottom-color: #004d40;
+    }
+    .footer {
+      text-align: center;
+      padding: 40px 20px 32px;
+      color: #64748b;
+      font-size: 0.9rem;
+      border-top: 1px solid #dce5ed;
+      margin-top: 20px;
+    }
+    .footer a {
+      color: #00897b;
+      text-decoration: none;
+    }
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .content-block {
+        padding: 24px 18px;
+      }
+      .tip-grid {
+        grid-template-columns: 1fr;
+      }
+      .content-block ul li {
+        width: 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      .wrapper {
+        padding: 0 16px;
+      }
+      .hero {
+        padding: 44px 20px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- 深色头图 -->
+    <header class="hero">
+      <h1>简明指南 · <span>爱游戏</span></h1>
+      <p>一份认真的产品说明与访问提醒，帮助您更顺畅地了解和使用平台。内容侧重实用性，不夸大、不诱导。</p>
+      <span class="badge">产品说明式 · 更新于2025</span>
+    </header>
+
+    <!-- 摘要区块 -->
+    <section class="content-block">
+      <h2>📋 平台摘要</h2>
+      <p>爱游戏</a>是一个聚焦体育休闲与娱乐内容的线上平台，提供赛事资讯、运动社区与轻互动模块。平台强调内容整合与用户体验，没有复杂的门槛，适合希望快速了解体育动态或参与轻度互动的用户。</p>
+      <p>本说明整理了平台的使用思路、常见场景以及访问时的注意事项，帮助您判断是否适合自己，并合理使用。</p>
+    </section>
+
+    <!-- 特点 / 亮点 -->
+    <section class="content-block">
+      <h2>✨ 亮点特点</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin: 12px 0 6px;">
+        <div style="flex: 1; min-width: 160px; background: #f7fafc; padding: 16px; border-radius: 16px;">
+          <div style="font-size: 1.8rem; margin-bottom: 2px;">🏟️</div>
+          <strong style="color: #0b4156;">赛事聚合</strong>
+          <p style="font-size: 0.92rem; margin: 6px 0 0;">多项目比赛信息与实时数据，结构清晰。</p>
+        </div>
+        <div style="flex: 1; min-width: 160px; background: #f7fafc; padding: 16px; border-radius: 16px;">
+          <div style="font-size: 1.8rem; margin-bottom: 2px;">💬</div>
+          <strong style="color: #0b4156;">轻社区</strong>
+          <p style="font-size: 0.92rem; margin: 6px 0 0;">简洁的讨论空间，用户可围绕话题交流。</p>
+        </div>
+        <div style="flex: 1; min-width: 160px; background: #f7fafc; padding: 16px; border-radius: 16px;">
+          <div style="font-size: 1.8rem; margin-bottom: 2px;">📱</div>
+          <strong style="color: #0b4156;">跨设备适配</strong>
+          <p style="font-size: 0.92rem; margin: 6px 0 0;">移动端与桌面端体验一致，浏览顺畅。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 使用场景 / 建议 -->
+    <section class="content-block">
+      <h2>🧭 使用建议</h2>
+      <p>根据产品定位和用户反馈，以下场景比较适合使用<a href="https://sport-app-igame.com" style="color: #006b5e; font-weight: 500; text-decoration: underline; text-underline-offset: 3px;">爱游戏</a>：</p>
+      <ul>
+        <li>日常查看体育赛事结果与日程</li>
+        <li>参与非竞技类的娱乐互动（如预测、话题投票）</li>
+        <li>浏览体育资讯与用户短评</li>
+        <li>作为快速查询运动数据的轻工具</li>
+        <li>社交需求较轻、更看重信息获取的用户</li>
+      </ul>
+      <p style="margin-top: 12px;">建议新用户先花几分钟浏览各板块，了解内容分类方式，再根据兴趣选择关注的话题或赛事。</p>
+    </section>
+
+    <!-- 访问提醒 + 可信提示 -->
+    <section class="content-block">
+      <h2>⚠️ 访问提醒</h2>
+      <div class="tip-grid">
+        <div class="tip-card">
+          <strong>🔐 账户与隐私</strong>
+          <p>平台采用基本的账户体系，建议使用独立密码，不与其他重要账户共用。</p>
+        </div>
+        <div class="tip-card">
+          <strong>📶 网络要求</strong>
+          <p>部分动态内容依赖实时数据，建议在稳定网络下使用，加载更流畅。</p>
+        </div>
+        <div class="tip-card">
+          <strong>🕒 内容时效</strong>
+          <p>赛程与结果以官方数据为准，平台做整合展示，仅供参考。</p>
+        </div>
+        <div class="tip-card">
+          <strong>🧩 互动规范</strong>
+          <p>社区遵循基本发言规则，理性讨论，不传播未经证实的信息。</p>
+        </div>
+      </div>
+      <p style="margin-top: 20px; font-size: 0.95rem; color: #3c5a73;">本产品不涉及任何形式的博彩或违规竞猜，聚焦信息与娱乐。</p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section class="content-block">
+      <h2>❓ 常见问题（FAQ）</h2>
+      <div class="faq-item">
+        <strong>需要注册才能浏览内容吗？</strong>
+        <p>部分公开信息无需登录即可查看，参与互动或收藏功能需注册账户。</p>
+      </div>
+      <div class="faq-item">
+        <strong>数据更新频率如何？</strong>
+        <p>比赛数据在赛事进行中会实时或准实时更新，历史数据每日同步。</p>
+      </div>
+      <div class="faq-item">
+        <strong>移动端体验如何？</strong>
+        <p>页面采用响应式设计，在手机与平板上均可自适应操作。</p>
+      </div>
+      <div class="faq-item">
+        <strong>有客服或反馈渠道吗？</strong>
+        <p>平台设有基础反馈入口，可通过页面内指引提交问题。</p>
+      </div>
+    </section>
+
+    <!-- 含链接的句子 (自然嵌入) -->
+    <div class="cta-line">
+      如果您正在寻找一个信息清晰的体育娱乐平台，可以了解一下 <a href="https://sport-app-igame.com">爱游戏</a>，按需使用即可。
+    </div>
+
+    <footer class="footer">
+      <p>本页面为产品说明页，内容仅供了解和参考。<br>
+      访问时请留意个人网络环境与账户安全。© 2025</p>
+    </footer>
+  </div>
+</body>
+</html>
